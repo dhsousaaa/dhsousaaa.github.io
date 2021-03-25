@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>01</title>
+</head>
+<body>
+    <div class="container">
+        <div class="container-items">
+            <h1>Calculadora de Juros</h1>
+            <div class="container-campos-calculadora">
+                <Label>Valor:</Label>
+                <input type="text" name="valor" id="valor">
+                <Label>Porcentagem juros:</Label>
+                <input type="text" name="juros" id="juros">
+                <Label>Dias de atraso:</Label>
+                <input type="text" name="dias" id="dias">
+                <p>Tipo juros:</p>
+                <input type="radio" id="pro-rata" name="tipo-juros" value="pro-rata" checked=true>
+                <label for="pro-rata-label">Pro-rata</label><br>
+                <input type="radio" id="percentual" name="tipo-juros" value="percentual">
+                <label for="percentual-label">Percentual</label><br>
+
+                <div class="container">
+                    <button class="btn-medium btn-danger" id="btnCalcular">Calcular</button>
+                </div>
+                <div class="detalhes-calculo">
+                    <div class="mensagem-calculo"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    >
+    <script src="scripts.js"></script>
+</body
+</html>
