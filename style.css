@@ -1,0 +1,125 @@
+* {
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container {
+    margin: 0 auto;                 
+    padding: 0 2%;
+    width: 90%;
+    max-width: 1280px;
+    text-align: center;
+}
+
+.container-items {
+    width: 100%;
+    height: auto;
+    border: 1px solid #1111;
+    border-radius: 5px;
+    padding: 30px;
+}
+
+.btn {
+    padding: 5px 15px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.btn-medium {
+    padding: 10px 30px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.5ms ease;
+}
+
+.btn-danger {
+    color: white;
+    background-color: red;
+}
+
+.btn-danger:hover {
+    background-color: darkred;
+}
+
+.btn-warning {
+    color: white;
+    background-color: orange;
+}
+
+.btn-warning:hover {
+    background-color: darkorange;
+}
+
+.btn-success {
+    color: white;
+    background-color: green;
+}
+
+.btn-success:hover {
+    background-color: darkgreen;
+}
+
+.btn-primary {
+    color: white;
+    background-color: darkturquoise;
+}
+
+.btn-primary:hover {
+    background-color: cadetblue;
+}
+
+.btn-dafault {
+    color: #111;
+    background-color: #1111;
+}
+
+.btn-dafault:hover {
+    background-color: #1112;
+}
+
+.container-campos-calculadora {
+    width: 50%;
+    margin: 0 auto;
+    padding: 30px;
+    text-align: left;
+}
+
+input[type=text] {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border:none;
+    border: 1px solid #1114;
+    border-radius: 5px;
+    outline: none;
+    width: 100%;
+    padding: 5px 10px;
+}
+
+
+label {
+    width: 100% !important;
+}
+
+#btnCalcular {
+    margin-top: 5px;
+    text-align: left;
+}
+
+p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.detalhes-calculo {
+    margin-top: 20px;
+    border-radius: 5px;
+    padding: 15px;
+    background-color: #111;
+    color: white;
+}
