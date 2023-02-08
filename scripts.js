@@ -1,80 +1,48 @@
-function calcularJuros() {
+const AR_LINHA_DIGITAVEL = [
+    '75691111100101130850704671610014192480000004650'
+];
 
-    let btnCalcular = document.querySelector('#btnCalcular');
-    let divDetalhesJuros = document.querySelector('.detalhes-calculo');
-    divDetalhesJuros.style.display = 'none';
-    btnCalcular.addEventListener('click', (e) => {
-        let valor = Number(document.querySelector('#valor').value);
-        let juros = Number(document.querySelector('#juros').value);
-        let dias = Number(document.querySelector('#dias').value);
-        let mensagemJuros = document.querySelector('.mensagem-calculo');
-        let tipoJuros = document.getElementsByName('tipo-juros');
-        let arChecked = [];
-    
-        e.preventDefault();
-        if (!valor) {
-            alert('Valor não preenchido!');
-            return;
-        }
-
-        if (!juros) {
-            alert('Juros não preenchido!');
-            return;
-        }
-
-        if (!dias) {
-            alert('Dias para atraso não preenchido!');
-            return;
-        }
-        
-        for (var i=0; i<tipoJuros.length; i++) {
-            if (tipoJuros[i].checked) {
-                arChecked.push(tipoJuros[i].value);
-            }
-        }
-
-        let valorJuros = 0;
-        if (arChecked[0] == 'pro-rata') {
-            let taxaProRata = juros / 30;
-            valorJuros = (valor * taxaProRata) / 100;
-            let Valortotal = (valorJuros.toFixed(2) * dias) + valor;
-            let textoValorJuros = `Juros ${juros}% a.m R$${valorJuros.toFixed(2)} por dia * ${dias} dias de atraso, o valor total é R$${Valortotal.toFixed(2)}`;
-            mensagemJuros.innerText = textoValorJuros;
-            divDetalhesJuros.style.display = 'block';
-        }
-
-        if (arChecked[0] == 'percentual') {
-            valorJuros = (valor * juros) / 100;
-            let Valortotal = valorJuros + valor;
-            let textoValorJuros = `Juros ${juros}% a.m R${valorJuros.toFixed(2)}, o valor total é R$${Valortotal.toFixed(2)}`;
-            mensagemJuros.innerText = textoValorJuros;
-            divDetalhesJuros.style.display = 'block';
-        }
-
-        valorJuros = (valor * juros) / 100;
-        return valorJuros;
-    });
-}
-
-
-function criarDetalhesCalculoJuros()
+function gerar()
 {
-    let valor = document.querySelector('#valor').value;
-    let juros = document.querySelector('#juros').value;
-    let dias = document.querySelector('#dias').value;
-    let tipoJuros = document.getElementsByName('tipo-juros');
-    let arChecked = [];
-
-    for (var i=0; i<tipoJuros.length; i++) {
-        if (tipoJuros[i].checked) {
-            arChecked.push(tipoJuros[i].value);
-        }
-    }
-
-    if (arChecked[0] == 'pro-rata') {
-        let taxaProRata = juros / 30;
-        let textoDetalhada = `Juros de {$taxaProRata}`;
-    }
+  let btnGerar = document.querySelector('#btnGerar');
+  btnGerar.addEventListener('click', (e) => {
+    let txtLinhaDigitavel = document.querySelector('#resultado-linha-digitavel');
+    let linhaDigitavel = gerarLinhaDigitavel();
+    txtLinhaDigitavel.innerText = linhaDigitavel;
+    txtLinhaDigitavel.setAttribute('disabled', 'disabled');
+  });
 }
 
-calcularJuros();
+
+function gerarLinhaDigitavel()
+{
+    let valor = Math.floor(Math.random() * 9000) + 5000;
+    let linhaDigitavel = substr_replace(
+        AR_LINHA_DIGITAVEL[0],
+        ("0000000000" + valor).slice(-10),
+        -10
+    );
+    console.log(linhaDigitavel);
+    return linhaDigitavel;
+}
+
+function substr_replace(str, replace, start, length) { 
+    if (start < 0) {
+      start = start + str.length
+    }
+    length = length !== undefined ? length : str.length
+    if (length < 0) {
+      length = length + str.length - start
+    }
+    return [
+      str.slice(0, start),
+      replace.substr(0, length),
+      replace.slice(length),
+      str.slice(start + length)
+    ].join('')
+}
+
+gerar();
+
+
+
