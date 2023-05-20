@@ -7,8 +7,17 @@
     font-size: 1.1rem;
 }
 
+input {
+  width: 600px;
+  text-align: center;
+  outline: none;
+  padding: 20px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0 , .1);
+}
 .container {
-    width: 70%;
+    width: 100vw;
     padding: 40px;
     padding: 0 2%;
     position: absolute;
@@ -17,34 +26,58 @@
     transform: translate(-50%, -50%);
     max-width: 1280px;
     text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .container-items {
     height: auto;
     border-radius: 5px;
-    padding: 30px;
+    padding: 20px;
 }
 
-.btn {
-    padding: 5px 15px;
+.btn{
+    width: 200px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin: 10px;
+    height: auto;
     border: none;
-    outline: none;
-    border-radius: 5px;
-    font-weight: bold;
+    background-size: 300% 100%;
+
+    border-radius: 50px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
 }
 
-.btn-medium {
-    padding: 10px 30px;
-    border: none;
-    outline: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: 0.5ms ease;
+.btn:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
 }
 
-.btn-danger {
+.btn-gerar {
     color: white;
-    background-color: red;
+    background-image: linear-gradient(to right, #667eea, #764ba2, #6B8DD6, #8E37D7);
+    box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75);
+}
+
+.btn-copy {
+  width: 100px;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 18px;
+  border: none;
+  color: #fff;
+  background-color: #4f545c;
+  transition: background-color .17s ease,color .17s ease;
 }
 
 .btn-success {
@@ -56,22 +89,7 @@
     background-color: darkgreen;
 }
 
-
-input[type=text] {
-    margin-top: 5px;
-    margin-bottom: 5px;
-    border:none;
-    border: 10px solid #1114;
-    border-radius: 5px;
-    outline: none;
-    width: 100%;
-    padding: 5px 10px;
-}
-
-.container-items .output-linha-digitavel {
-    border: 2px solid #cccccc;
-    border-radius: 5px;
-    width: 100%;
-    padding: 5px 10px;
-    height: 40px;
+h1 {
+  color: #4f545c;
+  font-size: 35px;
 }
