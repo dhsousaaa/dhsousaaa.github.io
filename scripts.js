@@ -1,16 +1,22 @@
 const AR_LINHA_DIGITAVEL = [
     '75691111100101130850704671610014100000000004650'
 ];
+const input = document.querySelector('input');
 
 function gerar()
 {
   let btnGerar = document.querySelector('#btnGerar');
   btnGerar.addEventListener('click', (e) => {
-    let txtLinhaDigitavel = document.querySelector('#resultado-linha-digitavel');
     let linhaDigitavel = gerarLinhaDigitavel();
-    txtLinhaDigitavel.innerText = linhaDigitavel;
-    txtLinhaDigitavel.setAttribute('disabled', 'disabled');
+    input.value = linhaDigitavel;
+    input.setAttribute('disabled', 'disabled');
   });
+}
+
+function copyToClipBoard(){
+  navigator.clipboard.writeText(input.value).then( ()=> {
+    alert('Copiado para área de trabalho!')
+  })
 }
 
 
@@ -22,11 +28,10 @@ function gerarLinhaDigitavel()
         ("0000000000" + valor).slice(-10),
         -10
     );
-    console.log(linhaDigitavel);
     return linhaDigitavel;
 }
 
-function substr_replace(str, replace, start, length) { 
+function substr_replace(str, replace, start, length) {
     if (start < 0) {
       start = start + str.length
     }
@@ -43,6 +48,3 @@ function substr_replace(str, replace, start, length) {
 }
 
 gerar();
-
-
-
